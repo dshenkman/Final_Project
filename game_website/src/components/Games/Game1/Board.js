@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import Square from "./Square"
+import "./Board.css"
 
 
 const initialState =  {
   squares: Array(9).fill(null),
-  xIsNext: true,
+  IsNext: true,
+  player1: {
+      data: ''
+},
+  player2: {
+    data: ''
+  }
 }
+
 
 class Board extends React.Component {
 
@@ -13,21 +21,47 @@ class Board extends React.Component {
     super(props);
     this.state = {...initialState}
     this.onClick = this.onClick.bind(this)
+    this.handleData = this.handleData.bind(this)
+    this.getData = this.getData.bind(this)
   }
+
+
+
+  getData (val) {
+
+  this.setState({player1: {
+      data: val.target.value
+},
+  player2: {
+    data: val.target.value
+  }})
+  console.warn(val.target.value);
+
+}
+
 
   onClick() {
     this.setState(initialState)
+
   }
 
+  handleData(event) {
+    this.setState({player2: {data: event.target.value}})
+  }
+
+
   handleClick (i) {
+
     const squares = this.state.squares.slice();
+
+
     if (calculateWinner(squares) || squares[i]) {
       return ;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O'
+    squares[i] = this.state.IsNext ? this.state.player1.data : this.state.player2.data
     this.setState({
       squares: squares,
-      xIsNext: !this.state.xIsNext,
+      IsNext: !this.state.IsNext,
     })
   }
 
@@ -42,27 +76,45 @@ class Board extends React.Component {
     )
   }
 
-
-
-
-
-
-
-
-
-
-
   render() {
+
+
+
+    // const [data, setData] = useState(null);
+    // const [print, setPrint] = useState(false)
     const winner = calculateWinner(this.state.squares);
     let status;
+
+
+
+
     if (winner) {
       status = ` ${winner} WINS!!`
     } else {
-       status = `Next Player: ${this.state.xIsNext ? 'X' : 'O'}`
+       status = `Now Up: ${this.state.IsNext ? this.state.player1.data : this.state.player2.data }`
      }
 
     return (
-      <div>
+      <div className  = 'gamebox'>
+      <div className = 'title'>Tic-Tac-Toe </div>
+          <div>
+          <input type="text" placeholder="Player 2" id="player1" />
+          <button onClick = {(event) => this.setState({
+            player1: {
+                data: event.target.value
+          }
+
+          }) }>Enter </button>
+
+          <input type="text" placeholder="Player 2" id="player2" />
+          <button onClick = {this.handleData}>Enter</button>
+
+
+
+          </div>
+
+
+      <div className = 'gameboard'>
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
@@ -79,8 +131,8 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-        <button onClick = {this.onClick}>Reset</button>
-
+        <button className = 'reset' onClick = {this.onClick}>Reset</button>
+        </div>
       </div>
     );
   }

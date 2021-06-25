@@ -1,0 +1,45 @@
+.gamebox {
+  background-image: url('../game-background.png');
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  border: 6px solid blue;
+}
+
+.gameboard {
+
+  height: 400px;
+  width: 400px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+
+}
+
+.square {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+
+}
+
+.reset {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.status {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}

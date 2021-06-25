@@ -1,4 +1,14 @@
 .Tilt {
   background-image: url("cool-background.png");
+  width: 150px;
+  margin: auto;
 
+}
+
+#pic {
+  margin: auto;
+}
+
+.box {
+  text-align: center;
 }

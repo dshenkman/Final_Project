@@ -1,3 +1,28 @@
-.gamelist {
-  list-style: none;
+#gameChoices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.gameLink {
+  text-align: center;
+  background-color: pink;
+}
+
+.caption {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.button {
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+#pic {
+  height: 200px;
+  width: 200px;
 }

@@ -7,8 +7,8 @@ class Game1 extends React.Component {
 
   render() {
     return (
-      <div className="game-board">
-        <div className="game">
+      <div>
+        <div>
           <Board />
         </div>
       </div>
