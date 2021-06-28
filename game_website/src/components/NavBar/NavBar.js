@@ -27,7 +27,7 @@ console.log({game1pic});
    constructor() {
      super();
      this.state = {
-       list:  [
+       games:  [
          {
            "id": 1,
            "name": "Tic-Tac-Toe",
@@ -46,6 +46,57 @@ console.log({game1pic});
    }
 
 
+   componentDidMount() {
+    this.updateFavoritesInStorage()
+
+    window.addEventListener(
+      "beforeunload",
+      this.saveToLocalStorage.bind(this)
+    );
+}
+
+  componentWillUnmount() {
+      window.removeEventListener(
+        "beforeunload",
+        this.saveToLocalStorage.bind(this)
+      );
+
+      this.saveToLocalStorage();
+   }
+
+
+
+ updateFavoritesInStorage() {
+   for (let key in this.state) {
+   if (localStorage.hasOwnProperty(key)) {
+     let value = localStorage.getItem(key);
+
+     try {
+       value = JSON.parse(value);
+       this.setState({ [key]: value });
+     } catch (e) {
+       this.setState({ [key]: value });
+     }
+   }
+ }
+ }
+
+
+
+
+
+
+  saveToLocalStorage() {
+    for (let key in this.state) {
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+
+  updateInput(key, value) {
+  this.setState({ [key]: value });
+}
+
+
 
    addFavorite = (favorite) => {
      const {favorites} = this.state;
@@ -54,8 +105,25 @@ console.log({game1pic});
        this.setState({
          favorites: [...this.state.favorites, favorite]
        });
+
      }
    };
+
+
+   removeFavorite = (favorite) => {
+     const {favorites} = this.state;
+
+     const remove = favorites.filter(
+       (game) => game.id !== favorite.id
+     )
+
+     this.setState({
+       favorites: remove
+     });
+   };
+
+
+
    render() {
   return (
 
@@ -109,19 +177,24 @@ console.log({game1pic});
                   <Route  path= '/Games'
                   exact render={() =>
                     (
-                      <Games list={this.state.list} addFavorite={this.addFavorite} />
+                      <div className = 'container-fluid'>
+
+                      <Games games={this.state.games} handleFavorites={this.favoriteGame} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} />
+                      </div>
 
                     )}/>
 
                   <Route  path= '/Favorites'>
-                    <Favorites favorites={this.state.favorites}  />
+                  <div className = "">
+                    <Favorites favorites={this.state.favorites}   />
+                    </div>
                   </Route>
 
                   <Route  path= '/Customize'>
                    <Customize />
                   </Route>
 
-                
+
 
                   <Route  path= '/signin'>
                    <Signin />

@@ -9,10 +9,7 @@
   text-align: center;
 }
 
-.caption {
-  width: 300px;
-  margin: 0 auto;
-}
+
 
 .button {
   text-align: center;
@@ -24,4 +21,17 @@
 #pic {
   height: 200px;
   width: 200px;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  border: 3px solid black;
+  width: 200px;
+}
+
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
