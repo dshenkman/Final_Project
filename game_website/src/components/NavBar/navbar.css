@@ -1,0 +1,31 @@
+.links{
+  display: flex;
+  justify-content: space-between;
+   flex-direction: row;
+   padding-right: 100px;
+     list-style: none;
+}
+
+
+
+
+
+.link {
+  height: 100px;
+  width: 350px;
+  margin: 50px;
+ font-size: 50px;
+}
+
+#Navbar {
+  height: 300px;
+}
+
+#navlinks {
+  padding: 30px;
+}
+
+
+.pa3 {
+  background-color: #4D88FF;
+}

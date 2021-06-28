@@ -62,32 +62,6 @@ class Customize extends React.Component {
 
   };
 
-   savePic = () => {
-    const form = new FormData();
-    form.append("photo", "this.state.imageDataURL");
-  fetch("https://mojipop.p.rapidapi.com/api/FaceDetection/CreateAvatar", {
-    "method": "POST",
-    "headers": {
-      "content-type": "multipart/form-data; boundary=---011000010111000001101001",
-      "x-rapidapi-key": "7ea3bba4femshe5fbca7638aac73p143dabjsn9df29e5ddd31",
-      "x-rapidapi-host": "mojipop.p.rapidapi.com"
-    }
-  })
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.error(err);
-  });
-
-  }
-
-
-
-  componentDidMount () {
-      this.savePic()
-
-        }
 
 
 

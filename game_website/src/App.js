@@ -1,11 +1,17 @@
 import './App.css';
 import React from 'react'
-import Navigation from './components/Navigation/Navigation'
-import Nav from './components/Nav'
+import ToggleSignOut from './components/ToggleSignOut/ToggleSignOut'
 import Favorites from './components/Favorites/Favorites'
 import Logo from './components/Logo/Logo'
-import Home from './components/Home/Home'
+import NavBar from './components/NavBar/NavBar'
 import Signin from './components/Signin/Signin'
+import Main from './components/Main/Main'
+import {BrowserRouter as Router,
+        Route,
+        Switch,
+         Link,
+} from 'react-router-dom'
+
 import Register from './components/Register/Register'
 
 
@@ -17,9 +23,24 @@ class App extends React.Component{
     super();
     this.state = {
       route: 'signin',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+       id: '',
+       name: '',
+       joined: ''
+     }
     }
   }
+
+  loadUser = (data) => {
+  this.setState({user: {
+    id: data.id,
+    name: data.name,
+    email: data.email,
+    entries: data.entries,
+    joined: data.joined
+  }})
+}
 
   onRouteChange = (route) => {
     if (route === 'signout') {
@@ -31,13 +52,23 @@ class App extends React.Component{
   }
 
   render() {
-    const { route } = this.state;
-      if (route === 'mainpage') {
+
+    const { route , isSignedIn } = this.state;
+
+      if (route === 'home') {
         return (
-        <nav className = 'pa3 pa4-ns'>
-          <Home className="link dim black b f6 f5-ns dib mr3" onRouteChange={this.onRouteChange} />
-          <Navigation className="dim purple grow" onRouteChange={this.onRouteChange} />
+          <Router>
+
+        <nav >
+        <ToggleSignOut onRouteChange={this.onRouteChange} />
+        <Main name={this.state.user.name} />
+        <NavBar onRouteChange={this.onRouteChange} />
+
+
+
         </nav>
+        </Router>
+
 
 
       )
@@ -46,13 +77,14 @@ class App extends React.Component{
           <div className = "signin">
             <h1 id= "title">KidsGames.com</h1>
             <div className = "forms">
-              <Signin onRouteChange={this.onRouteChange}/>
-              <Register onRouteChange={this.onRouteChange}/>
+              <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             </div>
         </div>
       )
 
       }
+
     }
 
 }

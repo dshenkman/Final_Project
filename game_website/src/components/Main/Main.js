@@ -1,17 +1,27 @@
 import React from 'react';
 import Logo from '../Logo/Logo'
+import Customize from '../Customize/Customize'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {setImage} from '../../redux/actions'
+import './main.css'
 
-const Main = () => {
+
+const Main = ({name}) => {
+
+
 
   return(
     <div>
-    <Logo className="link dim black b f6 f5-ns dib mr3"  />
 
-      <h1>Welcome, user!</h1>
-      <p>Avatar pic</p>
-      <p>Avatar </p>
+      <h1 className="welcome">{`Welcome ${name}!`}</h1>
+
+
     </div>
-  )
+    )
+
 }
 
-export default Main
+
+
+export default Main;
