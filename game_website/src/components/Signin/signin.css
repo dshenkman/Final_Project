@@ -1,6 +1,29 @@
-.br3 {
+#borderbox {
+  height: 650px;
   box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border:solid 7px #41403E;
+  border:solid 7px #008099;
   box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+  font-family: 'Akaya Kanadaka', cursive;
+
+
+}
+
+.registerbox {
+  width: 300px;
+  margin-left: 20px;
+}
+
+#cont {
+  margin: 30px;
+}
+
+#font {
+  font-size: 65px;
+  color: #008099;
+}
+
+input, label {
+  color: #008099;
+
 }

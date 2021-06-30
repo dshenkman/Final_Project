@@ -1,8 +1,4 @@
-.App {
 
-  background-image: url('cool-background.png');
-
-}
 
 
 
@@ -19,4 +15,15 @@
 
 .forms{
   display: flex;
+}
+
+#title {
+  background: #25CEC8;
+background: -moz-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+background: -webkit-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+background: linear-gradient(to right, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12vh;
+    font-family: 'Akaya Kanadaka', cursive;
 }

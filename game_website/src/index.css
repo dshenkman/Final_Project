@@ -4,7 +4,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    background-image: url("cool-background.png");
+    background: #A6FFF8;
+  background: -moz-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+  background: -webkit-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+  background: linear-gradient(135deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

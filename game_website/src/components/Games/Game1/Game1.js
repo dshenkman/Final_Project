@@ -8,7 +8,7 @@ class Game1 extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div id="gameboard">
           <Board />
         </div>
       </div>

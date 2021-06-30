@@ -59,14 +59,14 @@ class App extends React.Component{
         return (
           <Router>
 
-        <nav >
+        <div >
+        <NavBar onRouteChange={this.onRouteChange} name={this.state.user.name} />
         <ToggleSignOut onRouteChange={this.onRouteChange} />
-        <Main name={this.state.user.name} />
-        <NavBar onRouteChange={this.onRouteChange} />
 
 
 
-        </nav>
+
+        </div>
         </Router>
 
 
@@ -77,8 +77,9 @@ class App extends React.Component{
           <div className = "signin">
             <h1 id= "title">KidsGames.com</h1>
             <div className = "forms">
+            <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+
               <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             </div>
         </div>
       )

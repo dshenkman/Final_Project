@@ -1,3 +1,27 @@
-.welcome {
+#body {
+  margin: auto;
+  width: 60%;
+  padding-top: 55px;
+  padding-bottom: 85px;
+
   text-align: center;
+  color: #008099;
+  }
+
+.welcome {
+  color: #008099;
+  padding: 20px;
+  font-size: 70px;
+}
+
+#picture {
+  border-radius: 50px;
+  height: 35vh;
+  box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border:solid 7px #008099;
+  box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);  background: #25CEC8;
+  background: -moz-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+  background: -webkit-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+  background: linear-gradient(to right, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
 }

@@ -4,6 +4,7 @@ import {BrowserRouter as Router,
         Switch,
          Link,
 } from 'react-router-dom'
+import './register.css'
 
 class Register extends React.Component {
 
@@ -52,18 +53,18 @@ class Register extends React.Component {
 
   render () {
   return (
-    <Router>
-    <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+    <div className = "registerbox">
+    <article id= "borderbox" className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
 
         <main className="pa4 black-80">
           <div className="measure ">
-          <p>Not a user yet? Register here to sign up for KidsGames.com!</p>
+          <p id="reg">Not a user yet? Register here to sign up for KidsGames.com!</p>
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Register</legend>
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" type ="text" htmlFor="name">Name</label>
                 <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+
+                className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
                 type="text"
                 name="name"
                  id="name"
@@ -73,7 +74,8 @@ class Register extends React.Component {
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" type ="text" htmlFor="username">Username</label>
                 <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+
+                className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
                 type="text"
                 name="username"
                  id="username"
@@ -83,7 +85,7 @@ class Register extends React.Component {
               <div className="mv3">
                 <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                 <input
-                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className=" pa2 b input-reset ba bg-transparent hover-bg-black w-100"
                  type="password"
                  name="password"
                    id="password"
@@ -92,8 +94,9 @@ class Register extends React.Component {
                     />
               </div>
             </fieldset>
-            <div className="">
+            <div >
               <input
+              id="register"
               onClick = {this.onSubmitSignIn}
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
@@ -103,7 +106,7 @@ class Register extends React.Component {
           </div>
         </main>
     </article>
-    </Router>
+    </div>
       )
     }
 }

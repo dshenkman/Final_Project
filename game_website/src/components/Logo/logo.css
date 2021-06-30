@@ -1,6 +1,8 @@
 .Tilt {
-  background-image: url("cool-background.png");
-  width: 5;
+  background: #A6FFF8;
+background: -moz-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: -webkit-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: linear-gradient(135deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
   margin: auto;
 
 }
@@ -11,4 +13,9 @@
 
 .box {
   text-align: center;
+  color: #008099;
+}
+
+#cont1 {
+  margin-left: 30px;
 }

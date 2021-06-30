@@ -6,13 +6,8 @@ import "./Board.css"
 const initialState =  {
   squares: Array(9).fill(null),
   IsNext: true,
-  player1: {
-      data: ''
-},
-  player2: {
-    data: ''
-  }
 }
+
 
 
 class Board extends React.Component {
@@ -21,7 +16,6 @@ class Board extends React.Component {
     super(props);
     this.state = {...initialState}
     this.onClick = this.onClick.bind(this)
-    this.handleData = this.handleData.bind(this)
     this.getData = this.getData.bind(this)
   }
 
@@ -45,9 +39,6 @@ class Board extends React.Component {
 
   }
 
-  handleData(event) {
-    this.setState({player2: {data: event.target.value}})
-  }
 
 
   handleClick (i) {
@@ -58,7 +49,17 @@ class Board extends React.Component {
     if (calculateWinner(squares) || squares[i]) {
       return ;
     }
-    squares[i] = this.state.IsNext ? this.state.player1.data : this.state.player2.data
+    squares[i] = this.state.IsNext ?
+
+
+  'X'
+
+     :
+
+
+
+  'O'
+
     this.setState({
       squares: squares,
       IsNext: !this.state.IsNext,
@@ -80,6 +81,7 @@ class Board extends React.Component {
 
 
 
+
     // const [data, setData] = useState(null);
     // const [print, setPrint] = useState(false)
     const winner = calculateWinner(this.state.squares);
@@ -91,48 +93,33 @@ class Board extends React.Component {
     if (winner) {
       status = ` ${winner} WINS!!`
     } else {
-       status = `Now Up: ${this.state.IsNext ? this.state.player1.data : this.state.player2.data }`
+       status = `It is now ${this.state.IsNext ? 'X': 'O' }'s turn!`
      }
 
     return (
       <div className  = 'gamebox'>
-      <div className = 'title'>Tic-Tac-Toe </div>
-          <div>
-          <input type="text" placeholder="Player 2" id="player1" />
-          <button onClick = {(event) => this.setState({
-            player1: {
-                data: event.target.value
-          }
-
-          }) }>Enter </button>
-
-          <input type="text" placeholder="Player 2" id="player2" />
-          <button onClick = {this.handleData}>Enter</button>
+        <div className= 'center'>
+          <h2 className = 'title'>Tic-Tac-Toe </h2>
 
 
-
-          </div>
-
-
-      <div className = 'gameboard'>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-        <button className = 'reset' onClick = {this.onClick}>Reset</button>
-        </div>
+            <div className="status">{status}</div>
+            <div className="board-row">
+              {this.renderSquare(0)}
+              {this.renderSquare(1)}
+              {this.renderSquare(2)}
+            </div>
+            <div className="board-row">
+              {this.renderSquare(3)}
+              {this.renderSquare(4)}
+              {this.renderSquare(5)}
+            </div>
+            <div className="board-row">
+              {this.renderSquare(6)}
+              {this.renderSquare(7)}
+              {this.renderSquare(8)}
+            </div>
+            <button className = 'reset' onClick = {this.onClick}>Reset</button>
+            </div>
       </div>
     );
   }

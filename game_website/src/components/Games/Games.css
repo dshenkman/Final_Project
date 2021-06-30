@@ -9,29 +9,47 @@
   text-align: center;
 }
 
-
-
-.button {
-  text-align: center;
-  margin: auto;
-  margin-top: 30px;
-  padding: 10px;
+#star {
+  background-color: #008099
 }
 
+
+
+
+
+
 #pic {
-  height: 200px;
-  width: 200px;
+  height: 125px;
+  width: 155px;
 }
 
 .image-container {
   position: relative;
   transition: transform 0.2s;
-  border: 3px solid black;
-  width: 200px;
+  border: 8px solid #008099;
+  text-align: center;
+
+  padding: 20px;
+  width: 250px;
+  height: 250px;
 }
 
 
 .image-container:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.container-fluid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  grid-gap: 20px;
+
+
+}
+
+#favbutton {
+  margin-right: 20px;
+  margin-left: 15px;
 }

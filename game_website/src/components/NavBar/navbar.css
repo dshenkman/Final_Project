@@ -1,9 +1,17 @@
+
+
+
 .links{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
    flex-direction: row;
    padding-right: 100px;
      list-style: none;
+
+}
+
+.no-underline{
+  color:white;
 }
 
 
@@ -27,5 +35,9 @@
 
 
 .pa3 {
-  background-color: #4D88FF;
+
+  background: #25CEC8;
+background: -moz-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+background: -webkit-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
+background: linear-gradient(to right, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
 }

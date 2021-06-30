@@ -1,0 +1,19 @@
+.hero {
+  height: 150px;
+  width: 150px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  padding: 5px;
+  cursor: pointer;
+  background-size: cover;
+  text-align: center;
+}
+
+.hero:hover{
+  box-shadow: 0 12px 24px #999, 0 12px 24px #999;
+}
+
+.sh {
+  display: grid;
+  grid-template-columns: repeat(3,15%);
+  grid-gap: 10px;
+}

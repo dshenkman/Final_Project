@@ -7,19 +7,30 @@ import {setImage} from '../../redux/actions'
 import './main.css'
 
 
-const Main = ({name}) => {
+class Main extends React.Component {
 
 
 
+
+
+render() {
   return(
-    <div>
 
-      <h1 className="welcome">{`Welcome ${name}!`}</h1>
+    <div id= "main">
 
+        <div id="body">
+        
+          <h2 className="welcome">{`Welcome ${this.props.name}!`}</h2>
+
+
+          <img src={localStorage.getItem('selfie')} id="picture" />
+
+
+        </div>
 
     </div>
     )
-
+  }
 }
 
 

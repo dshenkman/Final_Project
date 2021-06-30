@@ -1,0 +1,61 @@
+.picbox {
+  border: solid 10px #008099;
+  border-radius: 50px;
+  width: 500px;
+  height: 400px;
+  background: #B3F2FF;
+  /* background: #A6FFF8;
+background: -moz-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: -webkit-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: linear-gradient(135deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%); */
+}
+
+.button {
+  border-radius: 50px;
+  border: solid 3px #008099;
+  background: #A6FFF8;
+background: -moz-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: -webkit-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: linear-gradient(135deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+}
+
+#customize {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+
+#homepage {
+  border: solid 2px #008099;
+  background: #A6FFF8;
+background: -moz-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: -webkit-linear-gradient(-45deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+background: linear-gradient(135deg, #A6FFF8 0%, #E0FFFE 49%, #A5F2DE 100%);
+display: block;
+margin: auto;
+margin-top: 20px;
+padding: 10px;
+font-size: 30px;
+}
+
+#camera {
+  color: #008099;
+  text-align: center;
+
+
+
+}
+
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+input, select {
+  background-color: #B3F2FF;
+}
