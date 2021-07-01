@@ -6,7 +6,7 @@ const Card = props => {
     <div className={`grid-card ${className}`} onClick={onClick}>
       <img
         className={`img-thumbnail img-fluid grid-img`}
-        style={{height: '83px'}}
+        style={{height: '100px', width: '100px'}}
         src={imgSource}
         alt={imgDesc}
       />

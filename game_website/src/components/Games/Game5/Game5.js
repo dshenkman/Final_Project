@@ -28,13 +28,13 @@ class Game5 extends React.Component {
   render() {
     return (
       <div className='puzzle'>
-        <h1>Sliding Puzzle</h1>
+        <h1 id="puzzle1">Sliding Puzzle</h1>
         {
           this.state && this.state.board ?
             <Board size={this.state.size} board={this.state.board} updateBoard={this.updateBoard.bind(this)}/>
             : null
         }
-        <input type='submit' value='New Game' onClick={this.newGame.bind(this, 3)} />
+        <input id="puzzlebutton" type='submit' value='New Game' onClick={this.newGame.bind(this, 3)} />
 
       </div>
     );

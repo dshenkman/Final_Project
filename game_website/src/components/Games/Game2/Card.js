@@ -20,7 +20,7 @@ const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
         <img src={"https://previews.123rf.com/images/oliafedorovsky/oliafedorovsky1512/oliafedorovsky151200007/50212063-abstract-colorful-hand-sketched-swirls-circles-seamless-background-pattern-vector-illustration-patte.jpg"} alt="card" />
       </div>
       <div className="card-face card-back-face">
-        <img src={card.image} alt="pokeball" />
+        <img src={card.image} alt="card" />
       </div>
     </div>
   );

@@ -28,12 +28,12 @@ const uniqueElementsArray = [
     image: 'https://wikiclipart.com/wp-content/uploads/2016/10/Heartfelt-spaghetti-cute-digital-clipart-romantic-pasta-clip-art.jpg'
   },
   {
-    type: "Pidgetto",
-    image: require(`./images/Pidgetto.png`)
+    type: "candy",
+    image: 'https://wikiclipart.com/wp-content/uploads/2017/03/Candy-black-and-white-halloween-candy-clipart-black-and-white-free.jpg'
   },
   {
-    type: "Bulbasaur",
-    image: require(`./images/Bulbasaur.png`)
+    type: "cookies",
+    image: 'https://wikiclipart.com/wp-content/uploads/2017/12/Plate-clipart-sugar-cookie-pencil-and-in-color-plate.jpg'
   }
 ];
 
@@ -85,7 +85,6 @@ export default function App() {
       setOpenCards([]);
       return;
     }
-    // This is to flip the cards back after 500ms duration
     timeout.current = setTimeout(() => {
       setOpenCards([]);
     }, 500);
@@ -104,7 +103,7 @@ export default function App() {
   useEffect(() => {
     let timeout = null;
     if (openCards.length === 2) {
-      timeout = setTimeout(evaluate, 300);
+      timeout = setTimeout(evaluate, 500);
     }
     return () => {
       clearTimeout(timeout);
@@ -135,10 +134,8 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <h3>Play the Flip card game</h3>
-        <div>
-          Select two cards with same content consequtively to make them vanish
-        </div>
+        <h2 id="words">Food Flip</h2>
+
       </header>
       <div className="container">
         {cards.map((card, index) => {
@@ -167,7 +164,7 @@ export default function App() {
           )}
         </div>
         <div className="restart">
-          <Button onClick={handleRestart} color="primary" variant="contained">
+          <Button onClick={handleRestart} color="#00809" variant="contained">
             Restart
           </Button>
         </div>

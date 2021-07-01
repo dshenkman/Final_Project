@@ -6,12 +6,15 @@
   position: absolute;
   width:100%;
   height: 100%;
+  color: #008099;
+}
 
   header {
     position: relative;
     width: 100%;
     text-align: center;
     margin-bottom: 8px;
+  }
 
     > div {
       font-size: 15px;
@@ -19,7 +22,7 @@
       text-align: center;
       margin: 0 auto;
     }
-  }
+
 
   footer {
     width: 360px;
@@ -27,26 +30,28 @@
     margin: 0 auto;
     padding: 10px 4px;
     margin-top: 10px;
-    
+  }
+
     .score {
       justify-content: center;
       display: flex;
+    }
 
       div {
         padding: 8px
       }
-    }
+
 
     .restart {
       display: flex;
       justify-content: center
     }
-  }
+
 
   .container {
     border: 1px solid #DEDEDE;
     padding: 12px;
-    box-shadow: 0 0 4px 4px #DEDEDE; 
+    box-shadow: 0 0 4px 4px #DEDEDE;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -59,4 +64,7 @@
     perspective: 100%;
     max-width: 720px;
   }
+
+#words {
+    color: #008099
 }

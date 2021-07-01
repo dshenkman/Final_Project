@@ -56,6 +56,10 @@ font-size: 30px;
 
 }
 
+.custhead {
+  color: #008099;
+}
+
 input, select {
   background-color: #B3F2FF;
 }

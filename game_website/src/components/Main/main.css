@@ -3,9 +3,24 @@
   width: 60%;
   padding-top: 55px;
   padding-bottom: 85px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+
 
   text-align: center;
   color: #008099;
+  }
+
+  #main {
+    background-image: url("https://t4.ftcdn.net/jpg/03/16/73/17/360_F_316731711_Whvc2sv7GhojVhRA721xzO6gEkQwonpA.jpg" );
+
+   background-repeat:no-repeat;
+
+   background-size:cover;
+   height: 900px;
+
+
   }
 
 .welcome {

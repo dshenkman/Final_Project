@@ -1,11 +1,13 @@
 import React from 'react'
 import Game from './Game'
+import './game6.scss'
+
 
 const Game6 = () => {
   return (
-    <>
-    <Game wrongsAllowed={3} />
-    </>
+    <div id="game6">
+    <Game  />
+    </div>
   )
 }
 

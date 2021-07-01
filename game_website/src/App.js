@@ -57,16 +57,16 @@ class App extends React.Component{
 
       if (route === 'home') {
         return (
-          <Router>
 
-        <div >
+          <Router>
+          <div className= "body">
+
         <NavBar onRouteChange={this.onRouteChange} name={this.state.user.name} />
         <ToggleSignOut onRouteChange={this.onRouteChange} />
 
 
 
-
-        </div>
+</div>
         </Router>
 
 
@@ -74,6 +74,7 @@ class App extends React.Component{
       )
       } else {
         return (
+
           <div className = "signin">
             <h1 id= "title">KidsGames.com</h1>
             <div className = "forms">
@@ -82,6 +83,7 @@ class App extends React.Component{
               <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             </div>
         </div>
+
       )
 
       }

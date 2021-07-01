@@ -13,7 +13,12 @@ import Signin from '../Signin/Signin'
 import Main from '../Main/Main'
 import Favorites from '../Favorites/Favorites'
 import game1pic from '../Games/Game1/game1.png'
-import game2pic from '../Games/Game2/game2.jpeg'
+import game2pic from '../Games/Game2/game2.png'
+import game3pic from '../Games/Game3/game3.png'
+import game4pic from '../Games/Game4/game4.png'
+import game5pic from '../Games/Game5/game5.png'
+import game6pic from '../Games/Game6/game6.png'
+
 import Logo from '../Logo/Logo'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Navbar'
@@ -36,31 +41,31 @@ console.log({game1pic});
          },
          {
            "id": 2,
-           "name": "",
+           "name": "Food Flip",
            "image": game2pic,
            "link": "/game2"
          },
          {
            "id": 3,
            "name": "Superhero Memory Buster",
-           "image": game2pic,
+           "image": game3pic,
            "link": "/game3"
          },
          {
            "id": 4,
            "name": "Ice Cream Match",
-           "image": game2pic,
+           "image": game4pic,
            "link": "/game4"
          },
          {
            "id": 5,
-           "name": "",
-           "image": game2pic,
+           "name": "Sliding Puzzle",
+           "image": game5pic,
            "link": "/game5"
          },{
            "id": 6,
-           "name": "",
-           "image": game2pic,
+           "name": "Math Facts",
+           "image": game6pic,
            "link": "/game6"
          }
        ],
@@ -102,13 +107,11 @@ console.log({game1pic});
      const name = this.props.name
   return (
 
-        <div>
 
         <Router>
 
 
 
-        <div>
 
 
         <Navbar className="pa3 pa4-ns h6 ">
@@ -185,7 +188,6 @@ console.log({game1pic});
 
 
                </Switch>
-            </div>
 
           </Router>
 
@@ -193,7 +195,6 @@ console.log({game1pic});
 
 
 
-     </div>
 
 
 

@@ -12,12 +12,11 @@ const Grid = props => {
   } = props;
 
   return (
-    <div className="container">
       <div className="row no-gutters">
         {list.map((item, index) => (
           <Card
             key={item.id}
-            className={`col-3  ${
+            className={`  ${
               visibleItems.includes(index) ? "grid-card-show" : ""
             } ${
               finishedItems.includes(index)
@@ -49,7 +48,6 @@ const Grid = props => {
           />
         ))}
       </div>
-    </div>
   );
 };
 

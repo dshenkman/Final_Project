@@ -19,11 +19,13 @@ render() {
     <div id= "main">
 
         <div id="body">
-        
+
+
           <h2 className="welcome">{`Welcome ${this.props.name}!`}</h2>
 
 
           <img src={localStorage.getItem('selfie')} id="picture" />
+
 
 
         </div>

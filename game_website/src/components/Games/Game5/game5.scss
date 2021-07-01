@@ -1,8 +1,4 @@
 
-html, body, #root {
- background: azure;
- height: 100%;
-}
 .puzzle {
  h1 {
  font-size: 48px;
@@ -16,19 +12,28 @@ html, body, #root {
 }
 
 .board {
- font-family: 'Lobster', cursive;
  width: 300px;
- margin: 10px;
+ margin: auto;
+}
 
  .square {
    display: inline-block;
    box-sizing: border-box;
-   width: 80px;
-   height: 60px;
+   width: 100px;
+   height: 80px;
    line-height: 60px;
    text-align: center;
    &.zero {
      background: lightblue;
    }
  }
+
+ #puzzlebutton {
+   margin: 30px;
+   padding: 10px;
+
+ }
+
+#puzzle1 {
+  color: #008099;
 }

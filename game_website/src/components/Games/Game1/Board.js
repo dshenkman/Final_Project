@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Square from "./Square"
-import "./Board.css"
+import "./Game1.css"
 
 
 const initialState =  {
@@ -97,23 +97,23 @@ class Board extends React.Component {
      }
 
     return (
-      <div className  = 'gamebox'>
-        <div className= 'center'>
-          <h2 className = 'title'>Tic-Tac-Toe </h2>
+      <div className  = 'gamebox2'>
+        <div className= 'cen'>
+          <h1 className = 'title2'>Tic-Tac-Toe </h1>
 
 
-            <div className="status">{status}</div>
-            <div className="board-row">
+            <div className="status2">{status}</div>
+            <div className="board-row2">
               {this.renderSquare(0)}
               {this.renderSquare(1)}
               {this.renderSquare(2)}
             </div>
-            <div className="board-row">
+            <div className="board-row2">
               {this.renderSquare(3)}
               {this.renderSquare(4)}
               {this.renderSquare(5)}
             </div>
-            <div className="board-row">
+            <div className="board-row2">
               {this.renderSquare(6)}
               {this.renderSquare(7)}
               {this.renderSquare(8)}

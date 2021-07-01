@@ -1,97 +1,162 @@
 import React from 'react'
-import './game6.css'
-import Cell from './Cell'
-import difference from 'lodash/difference'
+import './game6.scss'
+import Header from './Header'
+import Expression from './Expression'
+import MultipleChoice from './MC'
+import Summary from './Summary'
 
-class Game extends React.Component {
-  static messages = {
-    new: 'Click the Start button to play',
-    challenge: 'Memorize these blue cells',
-    playing: 'Recall the cells that were blue',
-    won: 'You Win!',
-    lost: 'Game Over!',
-  };
-  state = {
-    gameStatus: 'new', // new, challenge, playing, won, lost
-    selectedCells: [],
-  };
-  grid = new Array(1,2,3,4,5,6,7,8);
-  cellWidthPercentage = 100 / 4
-  challengeCells = [];
-  startGame = () => {
-    clearTimeout(this.timerId);
 
-    this.setState(
-      () =>
-        (this.timerId = setTimeout(
-          () => this.setState({ gameStatus: 'playing' }),
-          3000
-        ))
-    );
-  };
-  onCellClick = (cellId) => {
-    if (this.state.gameStatus != 'playing') {
-      return;
-    }
-    if (this.state.selectedCells.indexOf(cellId) >= 0) {
-      return;
-    }
-     this.setState((prevState) => ({
-      selectedCells: [...prevState.selectedCells, cellId],
-      gameStatus: this.calcNewGameStatus(
-        [...prevState.selectedCells, cellId]
-      ),
-    }));
-  };
 
-  calcNewGameStatus = (newSelectedCells) => {
-  if (newSelectedCells.length === 0) {
-    return 'won';
+class Game extends React.PureComponent {
+
+  constructor(props) {
+    super(props);
+
+    const status = this.getInitialStatus();
+
+    this.state = {
+      status,
+      selected: -1,
+      showSummary: false,
+      prev: this.generateProblem(status.max),
+      next: this.generateProblem(status.max)
+    };
   }
-  if (newSelectedCells.length === this.props.wrongsAllowed) {
-    return 'lost';
+
+  getInitialStatus() {
+    return {
+      score: 0,
+      max: 10,
+      asked: 0,
+      answered: 0,
+      multiplier: 1
+    };
   }
-  return 'playing';
-};
 
+  randomNumber(max) {
+    return Math.floor(Math.random()*max);
+  }
 
-  showSelectedCells = () =>
-    ['playing', 'won', 'lost'].includes(this.state.gameStatus);
-  gameIsIdle = () =>
-    ['new', 'won','lost'].includes(this.state.gameStatus);
+  generateProblem(max) {
+    const a = this.randomNumber(max);
+    const b = this.randomNumber(max - a);
+    return {a, b, choices: this.getChoices(a, b, max)};
+  }
+
+  increaseScore() {
+    const {status} = this.state;
+    let endTime = this.state.endTime;
+    let max = status.max;
+
+    // Add time and increase max every 5 correct answers
+    if(status.answered % 5 === 4) {
+      endTime += 15000;
+      max *= 2;
+    }
+
+    this.setState({
+      endTime,
+      status: {
+        ...status,
+        multiplier: Math.min(status.multiplier + 1, 5),
+        score: status.score + (max * status.multiplier),
+        asked: status.asked + 1,
+        answered: status.answered + 1,
+        max
+      }
+    });
+  }
+
+  decreaseScore() {
+    const {status} = this.state;
+    this.setState({
+      status: {
+        ...status,
+        multiplier: 1,
+        score: Math.max(0, status.score - Math.floor(status.max*0.25)), // Decrease by MAX * <Correct Answer Probability>
+        asked: status.asked + 1
+      }
+    });
+  }
+
+  shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  getChoices(a, b, max) {
+    const result = a + b;
+    const choices = [result];
+
+    while(choices.length < 4) {
+      const choice = this.randomNumber(max);
+      if(!choices.includes(choice)) {
+        choices.push(choice);
+      }
+    }
+    return this.shuffle(choices);
+  }
+
+  handleOnClick = value => {
+    const {prev: {a, b}, selected} = this.state;
+
+    if(selected !== -1) return;
+
+    if(value === a + b) {
+      this.increaseScore();
+    }
+    else {
+      this.decreaseScore();
+    }
+
+    this.setState({selected: value});
+
+    setTimeout(() => {
+      this.setState({
+        prev: this.state.next,
+        next: this.generateProblem(this.state.status.max),
+        selected: -1
+      });
+    }, 1500);
+  };
+
+  handleOnTimerEnd = () => {
+    this.setState({showSummary: true});
+  }
+
+  handleOnPlayAgain = () => {
+    const status = this.getInitialStatus();
+    this.setState({
+      status,
+      showSummary: false,
+      prev: this.generateProblem(status.max),
+      next: this.generateProblem(status.max)
+    });
+  }
+
   render() {
+    const {prev, next, status, selected, showSummary, endTime} = this.state;
+
     return (
-      <div className="game">
-        <div className="grid">
-          {this.grid.map((cellId) => {
-
-            const cellIsSelected =
-              this.state.selectedCells.indexOf(cellId) >= 0;
-            return (
-              <Cell
-                key={cellId}
-                id={cellId}
-                onClick={this.onCellClick}
-
-                showAsSelected={
-                  this.showSelectedCells() && cellIsSelected
-                }
-                width={this.cellWidthPercentage}
-              />
-            );
-          })}
+      <>
+      <h1 className='text123'>Addition Facts</h1>
+      <div className='game-container123'>
+        <div className='body123'>
+          <Expression from={`${prev.a} + ${prev.b} = `} to={`${next.a} + ${next.b} = `} transitioning={selected !== -1}/>
         </div>
-        {this.gameIsIdle() && (
-          <button onClick={this.startGame}>
-            {this.state.gameStatus === 'new'
-               ? 'Start'
-               : 'Play Again'}
-          </button>
-        )}
-        <div className="message">
-          {Game.messages[this.state.gameStatus]}
+        <div className='footer123'>
+          <div className='container123'>
+            <MultipleChoice values={prev.choices} selected={selected} onClick={this.handleOnClick} correct={selected === prev.a + prev.b}/>
+
+          </div>
         </div>
+        <p className="text1234">Answer the top question to see if you can make the button light up green!</p>
+
       </div>
+      </>
     );
   }
 }

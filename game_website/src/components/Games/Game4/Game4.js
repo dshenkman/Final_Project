@@ -104,15 +104,17 @@ function Game4() {
   return (
     <div className="text-center p-4 d-flex flex-column">
       <button
+      className="btn mb-4"
+      id="btn"
+
         onClick={() => {
           setNewGame(!newGame);
           setVisibleItems([]);
           setFinishedItems([]);
           setWinner(false);
         }}
-        className="btn btn-primary mb-4"
       >
-        New Game
+        Ice Cream Matching Game
       </button>
       {list.length === 0 ? (
         <div>...Loading</div>

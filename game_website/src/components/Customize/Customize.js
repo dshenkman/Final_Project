@@ -226,7 +226,7 @@ class Customize extends React.Component {
 
       <div id="camera">
 
-            <h1>Take a Selfie</h1>
+            <h1 className="custhead">Take a Selfie</h1>
               <div>
               {pic}
 
@@ -276,7 +276,7 @@ class Customize extends React.Component {
 
 
 
-                            <h1>Create your own Logo</h1>
+                            <h1 className="custhead">Create your own Logo</h1>
                               <div>
                             <input type="text" name="firstname" placeholder="First Name" onChange={this.handleFNameChange} />
                             </div>
