@@ -68,6 +68,7 @@ class Game3 extends React.Component {
     const {heroes, Score, top_Score} = this.state;
     return (
       <>
+      <div id="board">
       <Nav {...this.state} />
 
       <div className='heroList'>
@@ -76,6 +77,7 @@ class Game3 extends React.Component {
           return <Hero hero={item} handleClick={this.handleClick} key={i} />
         })
       }
+      </div>
       </div>
       </>
     )

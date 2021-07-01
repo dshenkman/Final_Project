@@ -58,16 +58,13 @@ class App extends React.Component{
       if (route === 'home') {
         return (
 
-          <Router>
-          <div className= "body">
-
+          <>
         <NavBar onRouteChange={this.onRouteChange} name={this.state.user.name} />
         <ToggleSignOut onRouteChange={this.onRouteChange} />
+        </>
 
 
 
-</div>
-        </Router>
 
 
 

@@ -16,6 +16,8 @@ $choice-spacing: 15px;
 
 #game6 {
   justify-content: center;
+  font-family: 'Akaya Kanadaka', cursive;
+
 }
 
 
@@ -222,7 +224,7 @@ $choice-spacing: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
   background-color: $color-white;

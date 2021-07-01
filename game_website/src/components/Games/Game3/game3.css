@@ -45,3 +45,8 @@
   grid-gap: 100px;
   width: 100%;
 }
+
+#board {
+  font-family: 'Akaya Kanadaka', cursive;
+
+}

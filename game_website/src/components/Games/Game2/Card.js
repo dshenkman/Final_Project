@@ -1,6 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import pokeball from "./images/pokeball.png";
 import "./card.scss";
 
 const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {

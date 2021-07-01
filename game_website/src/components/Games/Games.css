@@ -31,6 +31,8 @@
 
   width: 350px;
   height: 290px;
+  font-family: 'Akaya Kanadaka', cursive;
+
 }
 
 
@@ -66,4 +68,9 @@
 
 .caption {
   font-size: 30px;
+}
+
+.button {
+  font-family: 'Akaya Kanadaka', cursive;
+
 }

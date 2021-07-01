@@ -29,6 +29,6 @@ background: -webkit-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%)
 background: linear-gradient(to right, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 12vh;
+    font-size: 150px;
     font-family: 'Akaya Kanadaka', cursive;
 }

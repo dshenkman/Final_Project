@@ -39,3 +39,8 @@ background: -moz-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
 background: -webkit-linear-gradient(left, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
 background: linear-gradient(to right, #25CEC8 0%, #9569A4 50%, #45B0C5 100%);
 }
+
+#links1 {
+  font-family: 'Akaya Kanadaka', cursive;
+
+}

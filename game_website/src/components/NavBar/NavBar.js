@@ -117,7 +117,7 @@ console.log({game1pic});
         <Navbar className="pa3 pa4-ns h6 ">
 
 
-        <ul className="links">
+        <ul className="links" id="links1">
 
 
         <Link to="/Main" className="no-underline">
@@ -126,7 +126,7 @@ console.log({game1pic});
 
 
           <Nav id="navlinks">
-              <li className="f2 dim dib mr6  grow">
+              <li className="f2 dim dib mr6  grow" >
               <Link to="/Games" className="no-underline">Games</Link>
               </li>
               <li className="f2 dim dib mr6  grow">

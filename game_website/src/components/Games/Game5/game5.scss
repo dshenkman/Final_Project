@@ -1,5 +1,7 @@
 
 .puzzle {
+  font-family: 'Akaya Kanadaka', cursive;
+
  h1 {
  font-size: 48px;
  }
@@ -36,4 +38,17 @@
 
 #puzzle1 {
   color: #008099;
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 1fr 1fr;
+  grid-gap: 2px;
+}
+
+#puzzlebutton {
+  margin: auto;
+  text-align: center;
 }
